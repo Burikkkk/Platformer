@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 public class Player : MonoBehaviour
@@ -11,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 15f;
     [SerializeField] private float speedBoost = 2f;
-    [SerializeField] private Canvas hpCanvas;
+    [SerializeField] private Slider hpSlider;
     private float rayLength = 1.0f;
     private bool speedBoosted = false;
     private bool attacks = false;
@@ -21,16 +22,19 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator animator;
+    private Health health;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+        health = GetComponent<Health>();
     }
 
     private void Update()
     {
+        hpSlider.value = health.Percent();
         if(dead)
             return;
         
@@ -111,7 +115,7 @@ public class Player : MonoBehaviour
     {
         State = States.DeathNoEffect;
         dead = true;
-        hpCanvas.enabled = false;
+        hpSlider.gameObject.SetActive(false);
     }
 
     public void SetAttacks(bool value)

@@ -18,6 +18,11 @@ public class Health : MonoBehaviour
         hp += value;
     }
 
+    public float Percent()
+    {
+        return hp / maxHp;
+    }
+
     public void Decrease(float value)
     {
         hp -= value;

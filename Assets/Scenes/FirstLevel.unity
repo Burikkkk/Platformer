@@ -7069,6 +7069,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3564026850829729314, guid: 72a905bcc22e3e443be6f48bfb173c00, type: 3}
   m_PrefabInstance: {fileID: 276231749}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &336395243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9220615511011483644, guid: 2d59bf087704b024191f6844303842f3, type: 3}
+  m_PrefabInstance: {fileID: 8476519711509737405}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &351535254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13136,6 +13147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 360604216082982416, guid: 2d59bf087704b024191f6844303842f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1643719299536498101, guid: 2d59bf087704b024191f6844303842f3, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -13183,6 +13198,14 @@ PrefabInstance:
     - target: {fileID: 2239765134601483613, guid: 2d59bf087704b024191f6844303842f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139735990977998702, guid: 2d59bf087704b024191f6844303842f3, type: 3}
+      propertyPath: hpSlider
+      value: 
+      objectReference: {fileID: 336395243}
+    - target: {fileID: 9220615511011483644, guid: 2d59bf087704b024191f6844303842f3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
