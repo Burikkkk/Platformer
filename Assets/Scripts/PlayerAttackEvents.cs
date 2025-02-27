@@ -10,4 +10,9 @@ public class PlayerAttackEvents : MonoBehaviour
     {
         player.SetAttacks(false);
     }
+    
+    public void RestartOnDeath()
+    {
+        LevelManager.Restart();
+    }
 }

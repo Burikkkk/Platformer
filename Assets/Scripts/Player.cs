@@ -111,7 +111,8 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DeathBox"))
         {
-            LevelManager.Restart();
+            Debug.Log("I die");
+            State = States.DeathNoEffect;
         }
     }
 
@@ -133,7 +134,7 @@ public class Player : MonoBehaviour
         get { return (States)animator.GetInteger("State"); }
         set
         {
-            if(attacks)
+            if(attacks && value != States.DeathNoEffect)
                 return;
             if(animator.GetInteger("State") != (int)value) 
                 animator.SetInteger("State", (int)value);
