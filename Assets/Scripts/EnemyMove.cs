@@ -8,10 +8,17 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Transform targetLeft;
     [SerializeField] private Transform targetRight;
-    private int direction = 1;  // 1 право, -1 лево
+    [SerializeField] private int direction = 1;  // 1 право, -1 лево
+    private bool canMove = true;
     
     private void Update()
     {
+        if(targetLeft == null || targetRight == null)
+            return;
+        
+        if(!canMove)
+            return;
+        
         transform.Translate(Vector3.right * speed * Time.deltaTime * direction); // движение в нужную сторону
         
         if (direction == 1 && transform.position.x >= targetRight.position.x)   // дошел до правого края
@@ -25,7 +32,18 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-    private void ChangeDirection()
+    public bool CanMove
+    {
+        get { return canMove; }
+        set { canMove = value; }
+    }
+
+    public int Direction
+    {
+        get { return direction; }
+    }
+
+    public void ChangeDirection()
     {
         direction *= -1;
         
