@@ -7,16 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class LevelEnd : MonoBehaviour
 {
-    [SerializeField] private string nextLevelName;
+    [SerializeField] private bool hasNextLevel;
     //[SerializeField] private 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (nextLevelName != null)
+            if (hasNextLevel != null)
             {
-                SceneManager.LoadSceneAsync("nextLevelName");
+                LevelManager.LoadNextLevel();
             }
         }
     }
