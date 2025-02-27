@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField] private float speed = 3f;
-    [SerializeField] private int hp = 30;
     [SerializeField] private float jumpForce = 15f;
     [SerializeField] private float speedBoost = 2f;
     private float rayLength = 1.0f;
