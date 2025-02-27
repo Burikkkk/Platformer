@@ -11,9 +11,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 15f;
     [SerializeField] private float speedBoost = 2f;
+    [SerializeField] private Canvas hpCanvas;
     private float rayLength = 1.0f;
     private bool speedBoosted = false;
     private bool attacks = false;
+    private bool dead;
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
@@ -29,6 +31,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if(dead)
+            return;
+        
         bool isGrounded = CheckGrounded();
         
         if (isGrounded)
@@ -102,6 +107,13 @@ public class Player : MonoBehaviour
         attacks = true;
     }
 
+    public void Die()
+    {
+        State = States.DeathNoEffect;
+        dead = true;
+        hpCanvas.enabled = false;
+    }
+
     public void SetAttacks(bool value)
     {
         attacks = value;
@@ -111,8 +123,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DeathBox"))
         {
-            Debug.Log("I die");
-            State = States.DeathNoEffect;
+            Die();
         }
     }
 

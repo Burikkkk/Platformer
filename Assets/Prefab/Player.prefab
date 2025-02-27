@@ -125,6 +125,7 @@ MonoBehaviour:
   speed: 3
   jumpForce: 20
   speedBoost: 2
+  hpCanvas: {fileID: 1173376202272172393}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64

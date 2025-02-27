@@ -21,5 +21,20 @@ public class Health : MonoBehaviour
     public void Decrease(float value)
     {
         hp -= value;
+        if (hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        var player = GetComponent<Player>();
+        // var enemy
+        if (player != null)
+        {
+            player.Die();
+        }
+        
     }
 }
