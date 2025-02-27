@@ -35,10 +35,17 @@ public class Health : MonoBehaviour
     private void Die()
     {
         var player = GetComponent<Player>();
-        // var enemy
+        var enemy = GetComponent<EnemyAttack>();
         if (player != null)
         {
             player.Die();
+            return;
+        }
+
+        if (enemy != null)
+        {
+            enemy.Die();
+            return;
         }
         
     }

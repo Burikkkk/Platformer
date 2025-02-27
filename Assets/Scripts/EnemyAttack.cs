@@ -16,6 +16,7 @@ public class EnemyAttack : MonoBehaviour
     private EnemyMove enemyMove;
     private Animator animator;
     private bool stopAttack;
+    private bool dead;
 
     private void Start()
     {
@@ -28,6 +29,9 @@ public class EnemyAttack : MonoBehaviour
 
     private void Update()
     {
+        if(dead)
+            return;
+        
         if(!attacks)
             return;
         
@@ -56,6 +60,7 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
+    // надо OnAttackAnimationEnd но это всем менять в анимациях
     public void OnAnimationEnd()
     {
         if (stopAttack)
@@ -64,8 +69,19 @@ public class EnemyAttack : MonoBehaviour
             stopAttack = false;
             attacks = false;
             enemyMove.CanMove = true;
-
         }
+    }
+    
+    public void Die()
+    {
+        animator.SetBool("dead", true);
+        GetComponent<Collider2D>().enabled = false;
+        dead = true;
+    }
+
+    public void OnDeathAnimationEnd()
+    {
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpForce = 15f;
     [SerializeField] private float speedBoost = 2f;
     [SerializeField] private Slider hpSlider;
+    [SerializeField] private float damage = 10f;
+    [SerializeField] private GameObject playerSword;
     private float rayLength = 1.0f;
     private bool speedBoosted = false;
     private bool attacks = false;
@@ -90,6 +92,13 @@ public class Player : MonoBehaviour
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
         sprite.flipX = dir.x < 0.0f;
+
+        // var direction = dir.x < 0.0f ? -1 : 1;
+        // var spriteScale = sprite.gameObject.transform.localScale;
+        // if((direction < 0 && spriteScale.x > 0) || (direction > 0 && spriteScale.x < 0))
+        //     spriteScale.x *= direction;
+        // sprite.gameObject.transform.localScale = spriteScale;
+
     }
 
 
@@ -121,6 +130,11 @@ public class Player : MonoBehaviour
     public void SetAttacks(bool value)
     {
         attacks = value;
+    }
+
+    public float Damage
+    {
+        get { return damage; }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
