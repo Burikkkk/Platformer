@@ -118,7 +118,7 @@ AnimatorStateMachine:
     m_Position: {x: 1370, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4753130485075786422}
-    m_Position: {x: 1410, y: -130, z: 0}
+    m_Position: {x: 1250, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8475263246242406368}
     m_Position: {x: 1440, y: -70, z: 0}
@@ -284,6 +284,12 @@ AnimatorController:
   m_AnimatorParameters:
   - m_Name: State
     m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: Blend
+    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
