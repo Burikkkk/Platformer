@@ -5176,10 +5176,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   hp: 30
-  jumpForce: 15
+  jumpForce: 7
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!50 &652206646
 Rigidbody2D:
   serializedVersion: 4
@@ -5239,7 +5239,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.294407, y: 5.871323}
+  m_Offset: {x: 0, y: 0.08}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5261,7 +5261,7 @@ Transform:
   m_GameObject: {fileID: 652206644}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -83.035, y: 1.069, z: 0}
+  m_LocalPosition: {x: -80.63, y: 6.943, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5647,8 +5647,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764919973}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.724, y: 6.127, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5.7111, y: 5.7111, z: 5.7111}
   m_ConstrainProportionsScale: 0
   m_Children: []

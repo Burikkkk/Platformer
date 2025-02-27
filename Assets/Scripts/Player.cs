@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private int hp = 30;
     [SerializeField] private float jumpForce = 15f;
-    private float rayLength = 2.0f;
+    private float rayLength = 1.0f;
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        CheckGrounded();
+        //CheckGrounded();
     }
 
 
