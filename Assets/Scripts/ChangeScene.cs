@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Scene : MonoBehaviour
+public class ChangeScene : MonoBehaviour
 {
     public void Play()
     {
@@ -23,5 +23,13 @@ public class Scene : MonoBehaviour
 #endif
     }
 
-   
+    public static void Restart()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+    }
+
+    public static void LoadNextLevel()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }

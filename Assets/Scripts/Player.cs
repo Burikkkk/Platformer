@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DeathBox"))
         {
-            LevelManager.Restart();
+            ChangeScene.Restart();
         }
     }
 
