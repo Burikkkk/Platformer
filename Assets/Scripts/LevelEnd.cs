@@ -16,7 +16,7 @@ public class LevelEnd : MonoBehaviour
         {
             if (hasNextLevel != null)
             {
-                LevelManager.LoadNextLevel();
+                ChangeScene.LoadNextLevel();
             }
         }
     }
