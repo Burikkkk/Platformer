@@ -60,7 +60,7 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-    // надо OnAttackAnimationEnd но это всем менять в анимациях
+    // надо OnAttackAnimationEnd 
     public void OnAnimationEnd()
     {
         if (stopAttack)

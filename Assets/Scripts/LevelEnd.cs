@@ -12,7 +12,13 @@ public class LevelEnd : MonoBehaviour
     [SerializeField] private GameObject endPanel;
     [SerializeField] private AudioSource levelSource;
     [SerializeField] private AudioClip winClip;
-    
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,10 +30,18 @@ public class LevelEnd : MonoBehaviour
             }
             else
             {
+                animator.SetBool("IsOpened", true);
                 endPanel.SetActive(true);
                 levelSource.PlayOneShot(winClip);
                 Time.timeScale = 0.0f;
             }
         }
+    }
+
+    private void EndLevel()
+    {
+        endPanel.SetActive(true);
+        levelSource.PlayOneShot(winClip);
+        Time.timeScale = 0.0f;
     }
 }
