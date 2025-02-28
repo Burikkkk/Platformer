@@ -31,9 +31,7 @@ public class LevelEnd : MonoBehaviour
             else
             {
                 animator.SetBool("IsOpened", true);
-                endPanel.SetActive(true);
-                levelSource.PlayOneShot(winClip);
-                Time.timeScale = 0.0f;
+
             }
         }
     }
