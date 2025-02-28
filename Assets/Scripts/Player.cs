@@ -103,13 +103,13 @@ public class Player : MonoBehaviour
 
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
-        sprite.flipX = dir.x < 0.0f;
+        //sprite.flipX = dir.x < 0.0f;
 
-        // var direction = dir.x < 0.0f ? -1 : 1;
-        // var spriteScale = sprite.gameObject.transform.localScale;
-        // if((direction < 0 && spriteScale.x > 0) || (direction > 0 && spriteScale.x < 0))
-        //     spriteScale.x *= direction;
-        // sprite.gameObject.transform.localScale = spriteScale;
+         var direction = dir.x < 0.0f ? -1 : 1;
+         var spriteScale = sprite.gameObject.transform.localScale;
+         if((direction < 0 && spriteScale.x > 0) || (direction > 0 && spriteScale.x < 0))
+             spriteScale.x *= -1;
+         sprite.gameObject.transform.localScale = spriteScale;
 
     }
 
