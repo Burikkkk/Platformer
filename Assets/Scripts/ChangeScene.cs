@@ -17,11 +17,11 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
     }
 
-    // ����� ��� ������ �� ����
+    
     public void ExitGame()
     {
 
-        // ���� ���� �������� � ���������, �� ���������� ����
+       
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

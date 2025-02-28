@@ -149,6 +149,7 @@ public class Player : MonoBehaviour
 
     public float Damage
     {
+
         get { return damage; }
     }
 
