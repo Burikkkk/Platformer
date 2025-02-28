@@ -8,6 +8,12 @@ using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private AudioSource audio;
+    [SerializeField] private AudioClip attack;
+    [SerializeField] private AudioClip jump;
+    [SerializeField] private AudioClip death;
+    [SerializeField] private AudioClip win;
+    [SerializeField] private AudioClip run;
 
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 15f;
@@ -32,6 +38,7 @@ public class Player : MonoBehaviour
         sprite = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
         health = GetComponent<Health>();
+     
     }
 
     private void Update()
@@ -53,6 +60,7 @@ public class Player : MonoBehaviour
             if (rb.velocity.y > 0.0f) // летит вверх
             {
                 State = States.Jump;
+                
             }
             else // падает
             {
@@ -62,6 +70,7 @@ public class Player : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.LeftShift))
         {
+            ChangeSound(run);
             speedBoosted = true;
             State = States.Slide;
             speed *= speedBoost;
@@ -79,7 +88,10 @@ public class Player : MonoBehaviour
             Attack();
     }
 
-
+    private void ChangeSound(AudioClip clip) {
+    
+        audio.PlayOneShot(clip);
+    }
 
 
     private void Run()
@@ -110,18 +122,21 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
+        ChangeSound(jump);
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         State = States.Jump;
     }
 
     private void Attack()
     {
+        ChangeSound(attack);
         State = States.Attack;
         attacks = true;
     }
 
     public void Die()
     {
+        ChangeSound(death);
         State = States.DeathNoEffect;
         dead = true;
         hpSlider.gameObject.SetActive(false);

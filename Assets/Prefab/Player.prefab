@@ -122,6 +122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88fc62aa1610bbe4b80a79add0ce0deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
+  attack: {fileID: 8300000, guid: 2c8411b20ce67554fb04baa430df5d57, type: 3}
+  jump: {fileID: 8300000, guid: d8496aea883da95498ff36a684840359, type: 3}
+  death: {fileID: 8300000, guid: 4aff48105ce1220468bd1cc21bd3b8c9, type: 3}
+  win: {fileID: 8300000, guid: b472abf2e497ca044bc3178200b81a1f, type: 3}
+  run: {fileID: 8300000, guid: 64f91d6e71a02604ba67e9a649f474c6, type: 3}
   speed: 3
   jumpForce: 20
   speedBoost: 2
@@ -772,6 +778,7 @@ GameObject:
   - component: {fileID: 5960075116608258323}
   - component: {fileID: 6234826198317752726}
   - component: {fileID: 3627034682632029075}
+  - component: {fileID: 6939908805221277098}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -860,3 +867,11 @@ MonoBehaviour:
   player: {fileID: 2239765134601483613}
   smoothSpeed: 2
   deadZone: {x: 2, y: 1.5}
+--- !u!81 &6939908805221277098
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304836216362562128}
+  m_Enabled: 1
